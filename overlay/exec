@@ -1,0 +1,21 @@
+#! /bin/sh
+# /etc/init.d/exec_python
+ 
+case "$1" in
+  start)
+    echo "Starting App"
+    # run application you want to start
+    python /usr/local/sbin/my_app &
+    ;;
+  stop)
+    echo "Stopping App"
+    # kill application you want to stop
+    killall python
+    ;;
+  *)
+    echo "Usage: /etc/init.d/exec_python{start|stop}"
+    exit 1
+    ;;
+esac
+
+exit 0
